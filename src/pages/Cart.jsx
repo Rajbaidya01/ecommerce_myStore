@@ -24,13 +24,11 @@ function Cart() {
               key={index}
               className="flex items-center gap-6 bg-white dark:bg-gray-800 p-5 rounded-xl shadow hover:shadow-lg transition mb-5"
             >
-              {/* Image */}
               <img
                 src={item.image}
                 className="w-24 h-24 object-contain"
               />
 
-              {/* Info */}
               <div className="flex-1">
                 <h2 className="font-semibold text-gray-800 dark:text-gray-200 line-clamp-2">
                   {item.title}
@@ -40,7 +38,6 @@ function Cart() {
                   ${(item.price * item.quantity).toFixed(2)}
                 </p>
 
-                {/* Quantity */}
                 <div className="flex items-center gap-3 mt-3">
                   <button
                     onClick={() => decreaseQty(item.id)}
@@ -60,7 +57,6 @@ function Cart() {
                 </div>
               </div>
 
-              {/* Remove */}
               <button
                 onClick={() => removeFromCart(index)}
                 className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
@@ -70,7 +66,6 @@ function Cart() {
             </div>
           ))}
 
-          {/* Total Card */}
           <div className="mt-10 bg-white dark:bg-gray-800 p-6 rounded-xl shadow text-right">
             <h2 className="text-2xl font-bold">
               Total: <span className="text-green-600">${total}</span>

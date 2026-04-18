@@ -6,21 +6,34 @@ function Home() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchProducts().then(setProducts);
+    setLoading(true);
+    fetchProducts()
+      .then((data) => setProducts(data))
+      .finally(() => setLoading(false));
   }, []);
 
-  // ✅ filter logic
   const filteredProducts = products.filter((product) => {
     const matchSearch = product.title
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    const matchCategory = category === "all" || product.category === category;
+    const matchCategory =
+      category === "all" || product.category === category;
 
     return matchSearch && matchCategory;
   });
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+        <p className="text-gray-500">Loading products...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6">
@@ -28,6 +41,8 @@ function Home() {
         <input
           type="text"
           placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
           className="w-full p-3 rounded-xl border border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-black transition"
         />
 
@@ -44,7 +59,6 @@ function Home() {
         </select>
       </div>
 
-      {/* 🛍 Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />

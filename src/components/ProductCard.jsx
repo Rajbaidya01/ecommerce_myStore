@@ -8,7 +8,6 @@ function ProductCard({ product }) {
       onClick={() => navigate(`/product/${product.id}`)}
       className="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl transition duration-300 p-4 cursor-pointer group"
     >
-      {/* Image */}
       <div className="overflow-hidden">
         <img
           src={product.image}
@@ -16,12 +15,10 @@ function ProductCard({ product }) {
         />
       </div>
 
-      {/* Title */}
       <h2 className="mt-4 text-sm font-medium line-clamp-2 text-gray-800 dark:text-gray-200">
         {product.title}
       </h2>
 
-      {/* Price */}
       <p className="text-lg font-bold mt-2 text-black dark:text-white">
         ${product.price}
       </p>

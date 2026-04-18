@@ -19,12 +19,11 @@ function ProductDetails() {
 
   if (!product) return <p className="p-6">Loading...</p>;
 
-  // ✅ Handle add to cart with login check
   const handleAddToCart = () => {
     const user = localStorage.getItem("user");
 
     if (!user) {
-      navigate("/login"); // redirect if not logged in
+      navigate("/login");
       return;
     }
 

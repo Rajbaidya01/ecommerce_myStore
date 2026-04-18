@@ -39,7 +39,6 @@ function Navbar() {
   return (
     <div className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md px-6 py-4 flex justify-between items-center">
       
-      {/* Logo */}
       <Link
         to="/"
         className="text-xl font-bold text-gray-800 dark:text-white"
@@ -47,10 +46,8 @@ function Navbar() {
         🛍️ MyStore
       </Link>
 
-      {/* Right side */}
       <div className="flex items-center gap-4">
         
-        {/* Cart */}
         <button
           onClick={handleCartClick}
           className="px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -58,7 +55,6 @@ function Navbar() {
           🛒 Cart
         </button>
 
-        {/* Auth */}
         {user ? (
           <button
             onClick={handleLogout}
@@ -75,7 +71,6 @@ function Navbar() {
           </Link>
         )}
 
-        {/* Dark toggle */}
         <button
           onClick={() => setDark(!dark)}
           className="px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
