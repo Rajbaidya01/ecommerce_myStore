@@ -17,26 +17,22 @@ function Home() {
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    const matchCategory =
-      category === "all" || product.category === category;
+    const matchCategory = category === "all" || product.category === category;
 
     return matchSearch && matchCategory;
   });
 
   return (
     <div className="p-6">
-      
       <div className="flex gap-4 mb-6">
         <input
           type="text"
           placeholder="Search products..."
-          className="border p-2 w-full"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          className="w-full p-3 rounded-xl border border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-black transition"
         />
 
         <select
-          className="border p-2"
+          className="p-3 rounded-xl border border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-black transition"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
