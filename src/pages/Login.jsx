@@ -15,23 +15,6 @@ function Login() {
     <div className="min-h-screen flex items-center justify-center bg-yellow-100 dark:bg-gray-900 p-6">
       
       <div className="w-full max-w-5xl bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden grid md:grid-cols-2">
-        
-        <div className="hidden md:flex flex-col items-center justify-center bg-yellow-200 dark:bg-gray-700 p-8">
-          
-          <img
-            src="https://illustrations.popsy.co/gray/web-shopping.svg"
-            alt="login"
-            className="w-72 mb-6"
-          />
-
-          <h2 className="text-xl font-bold text-gray-800 dark:text-white">
-            Welcome to MyStore
-          </h2>
-
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-center mt-2">
-            Your place to shop smart & easy
-          </p>
-        </div>
 
         <div className="p-8 flex flex-col justify-center">
           
